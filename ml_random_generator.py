@@ -81,6 +81,8 @@ def main():
     training_text_raw_stream = gut.raw("shakespeare-macbeth.txt")
     processed_text_stream = preprocess_text(training_text_raw_stream)
     tokenized_text = tokenizer(processed_text_stream)
+    print(tokenized_text)
+    breakpoint()
 
 
 if __name__ == "__main__":
