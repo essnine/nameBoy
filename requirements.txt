@@ -13,7 +13,6 @@ gast==0.3.3
 google-auth==2.22.0
 google-auth-oauthlib==1.0.0
 google-pasta==0.2.0
-grpcio==1.57.0
 h5py==2.10.0
 idna==2.10
 ipython==8.12.2
@@ -34,7 +33,6 @@ parso==0.8.3
 pexpect==4.8.0
 pickleshare==0.7.5
 prompt-toolkit==3.0.39
-protobuf==4.24.0
 ptyprocess==0.7.0
 pure-eval==0.2.2
 pyasn1==0.4.8
@@ -48,16 +46,9 @@ rsa==4.6
 scipy==1.6.0
 six==1.16.0
 stack-data==0.6.2
-tensorboard==2.13.0
-tensorboard-data-server==0.7.1
-tensorboard-plugin-wit==1.7.0
-tensorflow-estimator==2.13.0
-tensorflow-io-gcs-filesystem==0.33.0
 termcolor==1.1.0
 tqdm==4.55.0
 traitlets==5.9.0
 typing_extensions==4.7.1
-urllib3==1.26.2
 wcwidth==0.2.6
-Werkzeug==1.0.1
 wrapt==1.12.1
