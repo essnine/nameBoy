@@ -9,15 +9,16 @@ from nltk import word_tokenize
 from nltk.corpus import gutenberg as gut
 from keras.preprocessing.text import Tokenizer
 
+
 def preprocess_text(sen):
     # remove punc marks and numbers
-    sentence = re.sub('[^a-zA-Z]', " ", sen)
+    sentence = re.sub("[^a-zA-Z]", " ", sen)
 
     # remove single chars
     sentence = re.sub(r"\s+[a-zA-z]\s+", " ", sentence)
 
     # removing multiple spaces
-    sentence = re.sub(r"\s+", ' ', sentence)
+    sentence = re.sub(r"\s+", " ", sentence)
 
     return sentence.lower()
 
@@ -32,7 +33,7 @@ def tokenizer(raw_text):
 
     # begin keras tokenizer section
     # we use the initialized tokenizer object directly, as it contains
-    # a dict indexing the words to their occurence frequency values. 
+    # a dict indexing the words to their occurence frequency values.
     k_tokenizer = Tokenizer(num_words=3437)
     k_tokenizer.fit_on_texts(raw_text_words)
 
@@ -44,13 +45,13 @@ def tokenizer(raw_text):
     input_seq = []
     output_words = []
     input_seq_len = 100
-    
+
     for i in range(0, n_words - input_seq_len, 1):
-        in_seq = raw_text_words[i:i + input_seq_len]
+        in_seq = raw_text_words[i : i + input_seq_len]
         out_seq = raw_text_words[i + input_seq_len]
         input_seq.append([word_2_index[word] for word in in_seq])
         output_words.append(word_2_index[out_seq])
-    
+
     print(input_seq[0])
 
     X = np.reshape(input_seq, (len(input_seq), input_seq_len, 1))
